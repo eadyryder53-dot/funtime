@@ -1,0 +1,12 @@
+{
+  "name": "@funtime/web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Next.js client application",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

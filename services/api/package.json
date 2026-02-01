@@ -1,0 +1,12 @@
+{
+  "name": "@funtime/api",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Express API server",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  }
+}
