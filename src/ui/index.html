@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Funtime UI System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="app-header" role="banner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◎</span>
+        <div>
+          <p class="eyebrow">Funtime Design System</p>
+          <h1>Connect. Collaborate. Celebrate.</h1>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="button ghost" type="button" id="themeToggle" aria-pressed="false">
+          Toggle theme
+        </button>
+        <button class="button primary" type="button">Launch app</button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <nav class="sidebar" aria-label="Primary">
+        <div class="sidebar-group">
+          <p class="sidebar-label">Screens</p>
+          <a href="#signup" class="nav-link">Signup</a>
+          <a href="#onboarding" class="nav-link">Onboarding</a>
+          <a href="#chats" class="nav-link">Chats</a>
+          <a href="#calls" class="nav-link">Calls</a>
+          <a href="#settings" class="nav-link">Settings</a>
+          <a href="#admin" class="nav-link">Admin</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-label">Design tokens</p>
+          <ul class="token-list">
+            <li>Typography: Inter, 16px base</li>
+            <li>Colors: Indigo primary, teal accent</li>
+            <li>Spacing: 4px grid</li>
+          </ul>
+        </div>
+      </nav>
+
+      <main id="main" tabindex="-1">
+        <section class="screen" id="signup">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Signup</p>
+              <h2>Create your account</h2>
+              <p class="muted">Start with secure credentials and accessible form controls.</p>
+            </div>
+            <div class="pill" aria-label="Step 1 of 4">Step 1 of 4</div>
+          </div>
+          <form class="card form-grid" aria-label="Signup form">
+            <label>
+              Full name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Work email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" minlength="8" required />
+            </label>
+            <label>
+              Team size
+              <select name="team" aria-label="Team size">
+                <option>1-5</option>
+                <option>6-20</option>
+                <option>21-50</option>
+                <option>50+</option>
+              </select>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span>I agree to the terms and privacy policy.</span>
+            </label>
+            <div class="actions">
+              <button class="button primary" type="submit">Create account</button>
+              <button class="button ghost" type="button">Sign in instead</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="screen" id="onboarding">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Onboarding</p>
+              <h2>Set up your workspace</h2>
+              <p class="muted">Use clear progress cues and easy data entry.</p>
+            </div>
+            <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+              <span style="width: 60%"></span>
+            </div>
+          </div>
+          <div class="card split">
+            <div>
+              <h3>Invite your team</h3>
+              <p class="muted">Send personalized invites with roles.</p>
+              <div class="pill" aria-label="3 invites sent">3 invites sent</div>
+              <div class="input-row">
+                <input type="email" placeholder="name@company.com" aria-label="Invite email" />
+                <button class="button secondary" type="button">Send</button>
+              </div>
+              <ul class="list">
+                <li>Riley — Admin</li>
+                <li>Jordan — Moderator</li>
+                <li>Sky — Member</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Choose your focus</h3>
+              <p class="muted">Personalize goals so the app tailors suggestions.</p>
+              <div class="tag-grid" role="group" aria-label="Focus areas">
+                <button class="tag" type="button">Community growth</button>
+                <button class="tag" type="button">Events</button>
+                <button class="tag" type="button">Support</button>
+                <button class="tag" type="button">Moderation</button>
+              </div>
+              <button class="button primary" type="button">Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="chats">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Chats</p>
+              <h2>Message hub</h2>
+              <p class="muted">Quick access to channels and threaded replies.</p>
+            </div>
+            <div class="pill" aria-label="12 unread messages">12 unread</div>
+          </div>
+          <div class="card chat-layout">
+            <aside class="chat-list" aria-label="Channels">
+              <input type="search" placeholder="Search" aria-label="Search chats" />
+              <ul>
+                <li class="active"># general</li>
+                <li># product</li>
+                <li># launches</li>
+                <li># random</li>
+              </ul>
+            </aside>
+            <div class="chat-thread" role="log" aria-live="polite">
+              <div class="message">
+                <p class="meta">Avery · 2m ago</p>
+                <p>Welcome to the new workspace. Let’s celebrate the launch!</p>
+              </div>
+              <div class="message highlight">
+                <p class="meta">You · 1m ago</p>
+                <p>Absolutely! I’ll share the onboarding checklist.</p>
+              </div>
+              <div class="composer">
+                <label class="sr-only" for="compose">Write message</label>
+                <input id="compose" type="text" placeholder="Write a message" />
+                <button class="button primary" type="button">Send</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="calls">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Calls</p>
+              <h2>Live sessions</h2>
+              <p class="muted">Manage live audio/video rooms with clarity.</p>
+            </div>
+            <div class="pill" aria-label="2 ongoing calls">2 ongoing</div>
+          </div>
+          <div class="card call-grid">
+            <div class="call-card" role="region" aria-label="Daily standup">
+              <h3>Daily Standup</h3>
+              <p class="muted">8 participants · 14 min</p>
+              <div class="avatar-row" aria-hidden="true">
+                <span>AL</span><span>JB</span><span>MK</span><span>SR</span>
+              </div>
+              <div class="actions">
+                <button class="button ghost" type="button">Join with audio</button>
+                <button class="button primary" type="button">Join</button>
+              </div>
+            </div>
+            <div class="call-card" role="region" aria-label="Community AMA">
+              <h3>Community AMA</h3>
+              <p class="muted">24 participants · Live Q&amp;A</p>
+              <div class="call-stats">
+                <div>
+                  <p class="eyebrow">Requests</p>
+                  <h4>6</h4>
+                </div>
+                <div>
+                  <p class="eyebrow">Raised hands</p>
+                  <h4>3</h4>
+                </div>
+              </div>
+              <button class="button secondary" type="button">View queue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="settings">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Settings</p>
+              <h2>Personalize your experience</h2>
+              <p class="muted">Accessible toggles and labeled controls.</p>
+            </div>
+            <div class="pill" aria-label="Profile strength 82 percent">82% complete</div>
+          </div>
+          <div class="card settings-grid">
+            <div>
+              <h3>Notifications</h3>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span>Push notifications</span>
+              </label>
+              <label class="switch">
+                <input type="checkbox" />
+                <span>Email summaries</span>
+              </label>
+            </div>
+            <div>
+              <h3>Privacy</h3>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span>Public profile</span>
+              </label>
+              <label class="switch">
+                <input type="checkbox" />
+                <span>Show online status</span>
+              </label>
+            </div>
+            <div>
+              <h3>Accessibility</h3>
+              <label>
+                Text size
+                <select aria-label="Text size">
+                  <option>Default</option>
+                  <option>Large</option>
+                  <option>Extra large</option>
+                </select>
+              </label>
+              <label>
+                Motion
+                <select aria-label="Reduce motion">
+                  <option>Standard</option>
+                  <option>Reduced</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="admin">
+          <div class="screen-header">
+            <div>
+              <p class="eyebrow">Admin</p>
+              <h2>Operations dashboard</h2>
+              <p class="muted">Keep visibility over users, reports, and billing.</p>
+            </div>
+            <div class="pill" aria-label="5 pending reviews">5 pending</div>
+          </div>
+          <div class="card admin-layout">
+            <div class="stat">
+              <p class="eyebrow">Active users</p>
+              <h3>12,480</h3>
+              <p class="muted">+8% this month</p>
+            </div>
+            <div class="stat">
+              <p class="eyebrow">Reports</p>
+              <h3>42</h3>
+              <p class="muted">12 require action</p>
+            </div>
+            <div class="stat">
+              <p class="eyebrow">Revenue</p>
+              <h3>$48k</h3>
+              <p class="muted">Projected</p>
+            </div>
+            <div class="table" role="table" aria-label="Admin review queue">
+              <div role="row" class="table-head">
+                <span role="columnheader">User</span>
+                <span role="columnheader">Issue</span>
+                <span role="columnheader">Priority</span>
+                <span role="columnheader">Status</span>
+              </div>
+              <div role="row">
+                <span role="cell">Casey</span>
+                <span role="cell">Content flag</span>
+                <span role="cell">High</span>
+                <span role="cell">Reviewing</span>
+              </div>
+              <div role="row">
+                <span role="cell">Taylor</span>
+                <span role="cell">Billing mismatch</span>
+                <span role="cell">Medium</span>
+                <span role="cell">Escalated</span>
+              </div>
+              <div role="row">
+                <span role="cell">Morgan</span>
+                <span role="cell">Access request</span>
+                <span role="cell">Low</span>
+                <span role="cell">Queued</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+      <p>Designed with accessibility-first tokens · Press Tab to navigate.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
